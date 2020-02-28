@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
+/**
+ * BackTracking
+ * subsetHelper1 - recurse on input and result without and with a element
+ * subsetHelper2 - it's a combination, so use i+1 to point to the beginning of the possible path
+ * */
 public class Subset {
     public static void main(String[] args) {
         Subset subset = new Subset();
