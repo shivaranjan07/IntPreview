@@ -2,6 +2,14 @@ package permutation;
 
 import java.util.Arrays;
 
+/**
+ * Permutation - can be used with different data type arrays
+ * logic - (backtracking)
+ *  a) maintain count array corresponding to input array i.e each indices of input array will have count 1,
+ *  when we visit that character we will reduce the count and based on the recursion level, we will add that character(index value)
+ *  to result array. increment the level as we go to next recursion level
+ *  b) each time look for character/index whose count is non zero
+ * */
 public class Permutation {
     public static void main(String ...balls) {
         Permutation permutation = new Permutation();
