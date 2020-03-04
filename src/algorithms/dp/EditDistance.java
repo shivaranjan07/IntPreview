@@ -1,5 +1,14 @@
 package algorithms.dp;
 
+/*Matrix for the given input
+	0 S h a s h i
+  0 0 1 2 3 4 5 6
+  S 1 0 1 2 3 4 5
+  h 2 1 0 1 2 3 4
+  i 3 2 1 1 2 3 3
+  v 4 3 2 2 2 3 4
+  a 5 4 3 2 3 3 4 */
+
 public class EditDistance {
 
 	private static int FindEditDistance(String firstString, String secondString, int firstStringLength,
