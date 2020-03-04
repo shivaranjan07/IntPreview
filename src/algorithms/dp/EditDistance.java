@@ -1,7 +1,7 @@
 package algorithms.dp;
 
 /*Matrix for the given input
-	0 S h a s h i
+    0 S h a s h i
   0 0 1 2 3 4 5 6
   S 1 0 1 2 3 4 5
   h 2 1 0 1 2 3 4
