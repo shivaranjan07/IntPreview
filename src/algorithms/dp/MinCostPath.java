@@ -36,9 +36,9 @@ public class MinCostPath {
 	
 	public static void main(String args[]) 
 	{ 
-		int costMatrix[][]= {{1, 4, 5}, 
-					   		 {4, 7, 2}, 
-					   		 {1, 6, 1} }; 
+		int costMatrix[][]= {{1, 4, 5},
+                             {4, 7, 2},
+                             {1, 6, 1}}; 
 		System.out.println(calculateMinCost(costMatrix,1,2)); 
 	}
 }
