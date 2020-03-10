@@ -30,19 +30,19 @@ class LetterCombination {
         List<String> result = new ArrayList<String>();
         //to make this code to work in leetCode add below line
         //if(digits.isEmpty()) return result;
-        helper(digits,  result, "", 1);
+        helper(digits,  result, "");
         System.out.println(result);
         //instead of sout return result;
     }
 
-    private void helper(String digits, List<String> result, String output, int level) {
+    private void helper(String digits, List<String> result, String output) {
         if(digits.length() == 0) {
             result.add(output);
         } else {
             String digit = digits.substring(0,1);
             String possibility = dialPad.get(digit);
             for(int i=0;i<possibility.length();i++) {
-                helper(digits.substring(1),  result, output+possibility.substring(i, i+1), level+1);
+                helper(digits.substring(1),  result, output+possibility.substring(i, i+1));
             }
         }
     }
