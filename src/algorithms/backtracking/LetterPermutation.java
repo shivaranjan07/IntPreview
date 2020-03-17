@@ -25,27 +25,28 @@ import java.util.List;
 public class LetterPermutation {
     public static void main(String[] args) {
         LetterPermutation lt = new LetterPermutation();
-        lt.permute("");
+        lt.permute("a1b2");
     }
 
     private void permute(String input) {
         //you can make result list as global variable
         List<String> result = new ArrayList<>();
-        helper(input, 0, "", result);
+        helper(input, 0, "", result, 1);
         System.out.println(result);
     }
 
-    private void helper(String input, int index, String output, List<String> result) {
+    private void helper(String input, int index, String output, List<String> result, int level) {
+
         if(input.length() == index) {
             result.add(output);
         } else {
             if(Character.isLetter(input.charAt(index))) {
                 //make a choice & explore
-                helper(input, index+1, output+Character.toLowerCase(input.charAt(index)), result);
+                helper(input, index+1, output+Character.toLowerCase(input.charAt(index)), result, level+1);
                 //undo a choice & explore
-                helper(input, index+1, output+Character.toUpperCase(input.charAt(index)), result);
+                helper(input, index+1, output+Character.toUpperCase(input.charAt(index)), result, level+1);
             } else {
-                helper(input, index+1, output + input.charAt(index), result);
+                helper(input, index+1, output + input.charAt(index), result, level+1);
             }
         }
     }
