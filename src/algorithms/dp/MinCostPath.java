@@ -1,13 +1,20 @@
 package algorithms.dp;
 
-/*
+/**
+ * Problem statement contains that we can traverse right, left or diagonal
  * While traversing from (0,0) to (1,2) we will go with (0,0) -> (0,1) -> (1,2)
  *                                                        1        4        2    = 7
- * Matrix generated for this program is 
-   0 1 2
-0  1 5 10
-1  5 8 7
-2  6 11 8
+ * Matrix generated for this program is
+ *     0 1 2
+	0  1 5 10
+	1  5 8 7
+	2  6 11 8
+
+ * how to arrive at recurrence relation think we are at the index (2,2),
+ * we can come to that index from (1,1), (1,2), (2,1).
+ * and dp[][] table will contain the best path possible till those index, lets call it as bp(best path).
+ * so find the minmum of bp and add it to index (2,2)
+ * so dp[2][2] = arr[2][2] + Math.min(dp[1][1], Math.min(dp[1,2], dp[2][1])
 */
 public class MinCostPath {
 
