@@ -10,7 +10,8 @@ package algorithms.dp;
 	1  5 8 7
 	2  6 11 8
 
- * how to arrive at recurrence relation think we are at the index (2,2),
+ just another way
+ * of deriving recurrence relation think we are at the index arr(2,2),
  * we can come to that index from (1,1), (1,2), (2,1).
  * and dp[][] table will contain the best path possible till those index, lets call it as bp(best path).
  * so find the minmum of bp and add it to index (2,2)

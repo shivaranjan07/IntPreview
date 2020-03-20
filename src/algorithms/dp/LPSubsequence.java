@@ -75,7 +75,7 @@ public class LPSubsequence {
                 if(st.charAt(si) == st.charAt(ei)) {
                     dp[si][ei] = 2+dp[si+1][ei-1];
                 } else {
-                    //case-2 if first n last character doesn't match then skip either first of last character
+                    //case-2 if first n last character doesn't match then skip either first or last character
                     dp[si][ei] = Math.max(dp[si+1][ei], dp[si][ei-1]);
                 }
             }
