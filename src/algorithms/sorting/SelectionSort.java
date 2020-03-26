@@ -4,13 +4,15 @@ public class SelectionSort {
 
 	public static void main(String[] args)
 	{
-		int[] array = { 3, 4, 2, 8, 1, 7, 9, 6, 5 };
+		int[] array = { 0, 3, 4, 2, 2, 10, 5, 7, 8, 1, 7, 9, 6, 5 };
 		int length = array.length;
 
 		ShellSort sh = new ShellSort();
 
 		sh.sort(array);
 //		sort(array, length);
+
+
 		System.out.print("Sorted Array : ");
 		for(int i=0; i<array.length; i++)
 		{
