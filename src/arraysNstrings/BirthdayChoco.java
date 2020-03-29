@@ -18,6 +18,7 @@ public class BirthdayChoco {
     static int birthday(List<Integer> s, int d, int m) {
         int start = 0, end = 0;
         int n = s.size();
+        //if(n < m) return 0;
         int sum = 0, count=0;
         for(end=0; end < n; end++) {
             sum += s.get(end);
