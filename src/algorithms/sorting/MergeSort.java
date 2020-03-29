@@ -40,6 +40,7 @@ public class MergeSort {
             temp[tempIndex++] = input[i] <= input[j] ? input[i++] : input[j++];
         }
 
+        //System.arraycopy(src, srcpos, des, despos, length);
         System.arraycopy(input, i, input, start + tempIndex, mid - i);
         System.arraycopy(temp, 0, input, start, tempIndex);
 

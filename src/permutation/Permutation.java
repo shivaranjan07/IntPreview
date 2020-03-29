@@ -3,7 +3,7 @@ package permutation;
 import java.util.Arrays;
 
 /**
- * Permutation - can be used with different data type arrays
+ * Permutation - can be used with different data type arraysNstrings
  * logic - (backtracking)
  *  a) maintain count array corresponding to input array i.e each indices of input array will have count 1,
  *  when we visit that character we will reduce the count and based on the recursion level, we will add that character(index value)
