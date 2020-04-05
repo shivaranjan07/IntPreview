@@ -1,4 +1,4 @@
-package algorithms.search;
+package algorithms.searching;
 
 import java.util.Scanner;
 
@@ -42,7 +42,7 @@ public class ExponentialSearch {
 	    	return -1;
 	    else
 	    //  Call binary search for the found range. 
-	    	return BinarySearch.search(array, i/2, Math.min(i, length), searchElement);
+	    	return algorithms.searching.BinarySearch.search(array, i/2, Math.min(i, length), searchElement);
 		
 	}
 }

@@ -1,4 +1,4 @@
-package algorithms.search;
+package algorithms.searching;
 
 public class String_match {
 
