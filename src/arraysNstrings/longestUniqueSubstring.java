@@ -25,7 +25,7 @@ public class longestUniqueSubstring {
             freq[i]++;
 
             while(freq[i] > 1) {
-                //increase start and reduce the count of freq[str[start]]-- nothing but remove start(ing char) from current substring
+                //increase start and reduce the count of freq[str[start]]-- nothing but remove start(ing chars) from current substring
                 freq[str.charAt(start) - '0']--;
                 start++;
             }
