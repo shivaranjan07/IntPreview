@@ -51,7 +51,7 @@ public class LargesetRectangle {
                 s.push(i); i++;
             } else {
                 tp = s.pop();
-                int w = s.empty() ? i : i - s.peek() - 1; //s.empty()?i-1:i-1-s.peek(); // i-1 because after push i is inc by 1
+                int w = s.empty() ? i : i - s.peek() - 1; //s.empty()?i-1:i-1-s.peek(); // i-1 because after a push, i is inc by 1
                 areaWithTop = hist[tp] * w;
 
                 if (maxArea < areaWithTop)
