@@ -53,11 +53,12 @@ public class TreeProbC {
                     map.get(object.distance).add(object.node);
                 }
 
-                //for left child distance will be -1 of root
+                //for left child distance will be -1 of root distance
                 if(object.node.left != null) {
                     queue.add(new Obj(object.node.left, object.distance-1));
                 }
 
+                //for right child distance will be +1 of root distance
                 if(object.node.right != null) {
                     queue.add(new Obj(object.node.right, object.distance+1));
                 }
