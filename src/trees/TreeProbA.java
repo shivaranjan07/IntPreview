@@ -10,18 +10,18 @@ public class TreeProbA {
         node.left.right = new TreeNode(5);
 
         TreeProbA tree = new TreeProbA();
-        int level = tree.hightOfTree(node);
-
-        System.out.println("height of a tree is " + level);
-
-        System.out.println("preOrder of Tree ");
-        tree.preOrderRecursive(node);
-
-        System.out.println("\npostOrder of Tree ");
-        tree.postOrderRecursive(node);
-
-        System.out.println("\ninOrder of Tree ");
-        tree.inOrderRecursive(node);
+//        int level = tree.hightOfTree(node);
+//
+//        System.out.println("height of a tree is " + level);
+//
+//        System.out.println("preOrder of Tree ");
+//        tree.preOrderRecursive(node);
+//
+//        System.out.println("\npostOrder of Tree ");
+//        tree.postOrderRecursive(node);
+//
+//        System.out.println("\ninOrder of Tree ");
+//        tree.inOrderRecursive(node);
 
         System.out.println("\nLevelOrder of Tree ");
         tree.levelOrderRecursive(node);
@@ -79,12 +79,13 @@ public class TreeProbA {
     }
 
     private void printGivenLevel(TreeNode node, int level) {
+
         //if tree is null nothing is there to print
         if(node == null)
             return;
         //if level is 1, then we have only one element to print
         if(level == 1) {
-            System.out.print(node.data + " ");
+            System.out.print("\n" + node.data + " ");
         } else if(level > 1) {
             printGivenLevel(node.left, level - 1);
             printGivenLevel(node.right, level - 1);
