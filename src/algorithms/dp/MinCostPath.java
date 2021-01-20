@@ -14,7 +14,7 @@ package algorithms.dp;
  * of deriving recurrence relation think we are at the index arr(2,2),
  * we can come to that index from (1,1), (1,2), (2,1).
  * and dp[][] table will contain the best path possible till those index, lets call it as bp(best path).
- * so find the minmum of bp and add it to index (2,2)
+ * so find the minimum of bp and add it to index (2,2)
  * so dp[2][2] = arr[2][2] + Math.min(dp[1][1], Math.min(dp[1,2], dp[2][1])
 */
 public class MinCostPath {
@@ -47,6 +47,6 @@ public class MinCostPath {
 		int costMatrix[][]= {{1, 4, 5},
                              {4, 7, 2},
                              {1, 6, 1}}; 
-		System.out.println(calculateMinCost(costMatrix,1,2)); 
+		System.out.println(calculateMinCost(costMatrix,1,2));
 	}
 }

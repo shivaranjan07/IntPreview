@@ -1,4 +1,4 @@
-package arraysNstrings;
+package arraysNstrings.slidingWindow;
 
 
 /**
@@ -9,7 +9,7 @@ package arraysNstrings;
  * */
 public class longestUniqueSubstring {
     public static void main(String[] args) {
-        String str = "aapplestooiipp";
+        String str = "abcabcbb";
         lengthSubString(str);
     }
 

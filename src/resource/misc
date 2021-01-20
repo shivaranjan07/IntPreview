@@ -1,0 +1,15 @@
+1. @Component auto detects and configures the beans using classpath scanning whereas @Bean explicitly declares a single bean,
+rather than letting Spring do it automatically.
+
+2. @Component does not decouple the declaration of the bean from the class definition where as @Bean decouples the declaration
+of the bean from the class definition.
+
+3. @Component is a class level annotation whereas @Bean is a method level annotation and name of the method serves as the bean name.
+
+4. @Component need not to be used with the @Configuration annotation where as @Bean annotation has to be used within
+the class which is annotated with @Configuration.
+
+5. We cannot create a bean of a class using @Component, if the class is outside spring container whereas we can create
+a bean of a class using @Bean even if the class is present outside the spring container.
+
+6. @Component has different specializations like @Controller, @Repository and @Service whereas @Bean has no specializations.

@@ -27,13 +27,6 @@ public class TreeProbA {
         tree.levelOrderRecursive(node);
     }
 
-    public int hightOfTree(TreeNode root) {
-        if(root == null) {
-            return 0;
-        } else {
-            return 1+Math.max(hightOfTree(root.left), hightOfTree(root.right));
-        }
-    }
 
     public void preOrderRecursive(TreeNode root) {
         if(root == null) {
@@ -71,7 +64,7 @@ public class TreeProbA {
      * one to print level order traversal of the tree(levelOrderRecursive)
      * */
     private void levelOrderRecursive(TreeNode node) {
-        int level = hightOfTree(node);
+        int level = node.hightOfTree(node);
         //print all the node at each d(level)
         for(int i=1;i<=level;i++) {
             printGivenLevel(node, i);

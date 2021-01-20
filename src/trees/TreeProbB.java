@@ -8,18 +8,21 @@ public class TreeProbB {
     public static void main(String[] args) {
         TreeNode node = new TreeNode(1);
         node.left = new TreeNode(2);
-        node.left.left = new TreeNode(4);
-        node.left.right = new TreeNode(5);
-        node.right = new TreeNode(3);
+        node.left.left = new TreeNode(3);
+        node.left.right = new TreeNode(4);
+        node.left.right.left = new TreeNode(7);
+        node.right = new TreeNode(5);
+        node.right.right = new TreeNode(6);
         TreeProbB tree = new TreeProbB();
 
-        tree.inorderIterative(node);
-        System.out.println();
+//        tree.inorderIterative(node);
+//        System.out.println();
         tree.preOrderIterative(node);
         System.out.println();
-        tree.postOrder(node);
+        tree.preOrderTwo(node);
+//        tree.postOrder(node);
         System.out.println();
-        tree.levelOrderTraversal(node);
+//        tree.levelOrderTraversal(node);
     }
 
 
@@ -88,6 +91,30 @@ public class TreeProbB {
     }
 
 
+    private void preOrderTwo(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+
+
+        while(!stack.isEmpty()) {
+            TreeNode curr = stack.pop();
+
+            if(curr != null) {
+                System.out.print(curr.data + " ");
+
+                if(curr.right != null)
+                    stack.push(curr.right);
+
+                if(curr.left != null)
+                    stack.push(curr.left);
+            }
+        }
+
+        System.out.println();
+
+    }
+
+
     /**
      * need two stacks
      * 1. push node to stack1
@@ -114,7 +141,7 @@ public class TreeProbB {
                 }
 
                 if(node.right != null) {
-                    s2.push(node.right);
+                    s1.push(node.right);
                 }
             }
 
@@ -134,15 +161,20 @@ public class TreeProbB {
             queue.add(root);
 
             while(!queue.isEmpty()) {
-                TreeNode node = queue.remove();
-                System.out.print(node.data + " ");
+                int count = queue.size();
+                while(count > 0) {
+                    TreeNode node = queue.remove();
+                    System.out.print(node.data + " ");
 
-                if(node.left != null) {
-                    queue.add(node.left);
+                    if (node.left != null) {
+                        queue.add(node.left);
+                    }
+                    if (node.right != null) {
+                        queue.add(node.right);
+                    }
+                    count--;
                 }
-                if(node.right != null) {
-                    queue.add(node.right);
-                }
+                System.out.println();
             }
         }
     }
