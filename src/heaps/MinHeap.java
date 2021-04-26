@@ -1,16 +1,14 @@
 package heaps;
 
 public class MinHeap {
-    private int[] heap;
+    private int[] heap = new int[]{10, 8, 9, 7, 6, 5, 4};;
     //to indicate the current index
-    private int heap_size;
+    private int heap_size = heap.length;
     //to indicate total capacity of heap
     private int max_size;
 
     public MinHeap(int max_size) {
         this.max_size = max_size;
-        heap = new int[max_size];
-        this.heap_size = 0;
     }
 
     public int parentIndex(int i) {
@@ -65,7 +63,7 @@ public class MinHeap {
         return root;
     }
 
-    private void minHeapify(int i) {
+    public void minHeapify(int i) {
         int left = left(i);
         int right = right(i);
         int smallest = i;
@@ -73,7 +71,7 @@ public class MinHeap {
         if(left < heap_size && heap[left] < heap[i]) {
             smallest = left;
         }
-        if(right < heap_size && heap[right] < smallest) {
+        if(right < heap_size && heap[right] < heap[smallest]) {
             smallest = right;
         }
 
@@ -108,14 +106,16 @@ public class MinHeap {
 
     public void print() {
 
-        for (int i=0;i<heap_size;i++) {
+        for (int i=0;i<heap.length;i++) {
             System.out.print(heap[i] + " ");
         }
 
-//        for (int i = 0; i < heap_size / 2; i++) {
-//            System.out.print(" PARENT : " + heap[i] + " LEFT CHILD : " +
-//                    heap[2 * i + 1] + " RIGHT CHILD :" + heap[2 * i + 2]);
-//            System.out.println();
-//        }
+        System.out.println();
+
+        for (int i = 0; i < heap.length / 2; i++) {
+            System.out.print(" PARENT : " + heap[i] + " LEFT CHILD : " +
+                    heap[2 * i + 1] + " RIGHT CHILD :" + heap[2 * i + 2]);
+            System.out.println();
+        }
     }
 }

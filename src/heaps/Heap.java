@@ -5,13 +5,19 @@ public class Heap {
         MinHeap min = new MinHeap(10);
         MaxHeap max = new MaxHeap(10);
 
-        min.insert(3);
-        min.insert(5);
-        min.insert(6);
-        min.insert(1);
-        min.insert(9);
+        min.insert(10);
         min.insert(8);
+        min.insert(9);
+        min.insert(7);
+        min.insert(6);
+        min.insert(5);
+        min.insert(4);
         min.extractMinakaPoll();
+
+        for(int i = (6/2)-1; i>=0;i--) {
+            min.minHeapify(i);
+        }
+
 
         min.print();
 
