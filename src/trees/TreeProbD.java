@@ -19,7 +19,7 @@ public class TreeProbD {
 //        System.out.println();
 //        tree.rightViewRecursive(node, 1);
 //        System.out.println();
-//        tree.leftViewOfBinaryTree(node);
+        tree.leftViewOfBinaryTree(node);
 //        System.out.println();
 //        tree.rightViewOfBinaryTree(node);
         System.out.println(tree.countOfleafNode(node));

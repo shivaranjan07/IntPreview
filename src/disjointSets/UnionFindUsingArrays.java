@@ -72,7 +72,7 @@ public class UnionFindUsingArrays {
             id[root2] = root1;
         }
 
-        //reduce the no of components byone, as we know that once we merged one(whole) component with other
+        //reduce the no of components by one, as we know that once we merged one(whole) component with other
         noofcomponents--;
     }
 }

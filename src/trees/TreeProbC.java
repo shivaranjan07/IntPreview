@@ -1,6 +1,9 @@
 package trees;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.TreeMap;
 
 public class TreeProbC {
     public static void main(String[] args) {
@@ -14,11 +17,11 @@ public class TreeProbC {
         node.right.left.right = new TreeNode(8);
 
         TreeProbC tree = new TreeProbC();
-//        tree.verticalTraversal(node);
-//        System.out.println("top view");
-//        tree.topViewOfTree(node);
-//        System.out.println("******************\ndiagonal view");
-//        tree.diagonalTraversal(node);
+        tree.verticalTraversal(node);
+        System.out.println("top view");
+        tree.topViewOfTree(node);
+        System.out.println("******************\ndiagonal view");
+        tree.diagonalTraversal(node);
         System.out.println("**********************\nBottom view");
         tree.bottomViewTraversal(node);
     }
@@ -113,8 +116,7 @@ public class TreeProbC {
             }
 
             map.forEach((k,v) -> {
-                System.out.print(v.data+ " ");
-                System.out.println();
+                System.out.println(v.data+ " ");
             });
 
         }
@@ -175,7 +177,7 @@ public class TreeProbC {
         if(root == null) {
             return;
         } else {
-            TreeMap<Integer, List<TreeNode>> map = new TreeMap<>();
+            TreeMap<Integer, TreeNode> map = new TreeMap<>();
             Queue<Obj> queue = new LinkedList<>();
 
             //add the root to queue
@@ -184,9 +186,7 @@ public class TreeProbC {
             while(!queue.isEmpty()) {
                 Obj object = queue.remove();
 
-
-                    map.put(object.distance, new LinkedList<>());
-                    map.get(object.distance).add(object.node);
+                map.put(object.distance, object.node);
 
 
                 //for left child distance will be -1 of root distance
@@ -200,10 +200,7 @@ public class TreeProbC {
                 }
             }
 
-            map.forEach((k,v) -> {
-                v.forEach((node) -> System.out.print(node.data+ " "));
-                System.out.println();
-            });
+            map.forEach((k,v) -> { System.out.println(v.data + " ");});
 
 //            for (Map.Entry<Integer, List<TreeNode>> entry : map.entrySet()) {
 //                for(TreeNode node:entry.getValue()) {
