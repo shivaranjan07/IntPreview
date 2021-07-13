@@ -47,10 +47,10 @@ public class UnionFindTemplate {
 
             if(rootP == rootQ) return; // both have same parent
 
-            if(rank[rootP] > rank[rootQ]) {
-                parent[rootQ] = rootP;
-            } else {
+            if(rank[rootQ] > rank[rootP]) {
                 parent[rootP] = rootQ;
+            } else {
+                parent[rootQ] = rootP;
                 if(rank[rootP] == rank[rootQ]) {
                     rank[rootP]++;
                 }
