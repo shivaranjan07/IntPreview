@@ -172,3 +172,32 @@ public class TreeProbE {
     }
 
 }
+
+/**
+ *
+ * class TreeDiameter {
+ *   private static int diameter = 0;
+ *   public static int findDiameter(TreeNode root) {
+ *     int height = helper(root);
+ *     return diameter;
+ *   }
+ *
+ *   public static int helper(TreeNode root) {
+ *     if(root == null) {
+ *       return 0;
+ *     }
+ *
+ *     int left = helper(root.left);
+ *     int right = helper(root.right);
+ *
+ *     // if the current node doesn't have a left or right subtree, we can't have
+ *     // a path passing through it, since we need a leaf node on each side
+ *     if(root.left != 0 && root.right != 0) {
+ *       // int d = (left + right) + 1;
+ *       diameter = Math.max(diameter, left+right+1);
+ *     }
+ *
+ *     return Math.max(left, right) + 1;
+ *
+ *   }
+ * */

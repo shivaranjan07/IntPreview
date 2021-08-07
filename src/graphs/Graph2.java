@@ -73,6 +73,39 @@ public class Graph2 {
         return true;
     }
 
+    public boolean isBipartite(int V, ArrayList<ArrayList<Integer>>adj)
+    {
+        int[] col = new int[V];
+        boolean[] vis = new boolean[V];
+        for(int i=0;i<V;i++)
+            if(!vis[i]) {
+                if(!bdfs2(adj,i,1,vis,col))
+                    return false;
+            }
+
+        return true;
+    }
+
+    boolean bdfs2(ArrayList<ArrayList<Integer>> adj, int src,
+                 int col, boolean[] vis, int[] color) {
+
+        vis[src]=true;
+        color[src]=col;
+
+        for(int nei:adj.get(src)) {
+            if(!vis[nei]) {
+                if(!bdfs2(adj, nei, col^1, vis, color))
+                    return false;
+            } else {
+                if(color[src]==color[nei]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+
+    }
+
     public static void main(String[] args) {
         int v = 7;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>(v);

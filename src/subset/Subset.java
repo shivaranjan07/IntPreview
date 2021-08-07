@@ -13,7 +13,20 @@ import java.util.List;
 public class Subset {
     public static void main(String[] args) {
         Subset subset = new Subset();
-        subset.findSubset(new ArrayList<>(Arrays.asList(1, 2, 3)));
+//        subset.findSubset(new ArrayList<>(Arrays.asList(1, 2, 3)));
+
+        List<List<Integer>> result = Subset.findSubsets(new int[] { 1, 3 });
+        System.out.println("Here is the list of subsets: " + result);
+
+        result = Subset.findSubsets(new int[] { 1, 5, 3 });
+        System.out.println("Here is the list of subsets: " + result);
+
+        result = Subset.findSubsetsDup(new int[] { 1, 1, 2, 2 });
+        System.out.println("Here is the list of subsets: " + result);
+
+        List<List<Integer>> subsets = new ArrayList<>();
+        Subset.helper(0, new int[] {1, 1, 2, 2}, subsets, new ArrayList<>());
+        System.out.println("Here is the list of subsets: " + subsets);
     }
 
     private void findSubset(ArrayList<Integer> vect) {
@@ -64,4 +77,57 @@ public class Subset {
             vect.add(0, in);
         }
     }
+
+    public static List<List<Integer>> findSubsets(int[] nums) {
+        List<List<Integer>> subsets = new ArrayList<>();
+        // start by adding the empty subset
+        subsets.add(new ArrayList<>());
+        for (int currentNumber : nums) {
+            // we will take all existing subsets and insert the current number in them to create new subsets
+            int n = subsets.size()-1;
+            for (int i = 0; i <= n; i++) {
+                // create a new subset from the existing subset and insert the current element to it
+                List<Integer> set = new ArrayList<>(subsets.get(i));
+                set.add(currentNumber);
+                subsets.add(set);
+            }
+        }
+        return subsets;
+    }
+
+    /**
+     * sort the array
+     * */
+    public static List<List<Integer>> findSubsetsDup(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> subsets = new ArrayList<>();
+        subsets.add(new ArrayList<>());
+        int start, end = 0;
+        for(int i=0;i<nums.length;i++) {
+            start = 0;
+            if(i>start && nums[i] == nums[i-1]) {
+                start = end+1;
+            }
+            end = subsets.size()-1;
+            for(int j=start; j<=end;j++) {
+                List<Integer> list = new ArrayList<>(subsets.get(j));
+                list.add(nums[i]);
+                subsets.add(list);
+            }
+        }
+        return subsets;
+    }
+
+    public static void helper(int start, int[] nums, List<List<Integer>> subsets, List<Integer> set) {
+        subsets.add(new ArrayList<>(set));
+        for(int i=start;i<nums.length;i++) {
+            if(i > start && nums[i] == nums[i-1]) continue;
+            set.add(nums[i]);
+            helper(i+1, nums, subsets, set);
+            set.remove(set.size()-1);
+        }
+    }
+
+
+
 }
